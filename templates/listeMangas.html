@@ -6,8 +6,10 @@
 </head>
 
 <body>
-    
-
+    <h1 class="title">Bienvenue {{user.NAME}}</h1>
+    <form action="/logout">
+        <button name="LogoutBTN" type="submit">Déconnexion</button>
+    </form>
     <table>
         <tr>
             <th>Titre</th>
@@ -20,8 +22,19 @@
         {% for book in books %}
         <tr>
             <td>{{book.NOMLIVRE}}</td> 
-            <td>{{book.NOMAUTEUR }}</td>
+            <td>{{book.NOMAUTEUR}}</td>
             <td>{{book.LIBELLE}}</td>
+            <td>
+                <form method="POST" action="/couverture">
+                    <button name="couvBTN" type="submit" value="{{book.IDLIVRE}}">Afficher couverture</button>
+                </form>
+            </td>
+            <td>
+                <form method="POST" action="/auteur">
+                    <button name="autBTN" type="submit" value="{{book.IDLIVRE}}">Afficher Auteur</button>
+                </form>
+            </td>
+            
         </tr>
         {% endfor %}
     </table>

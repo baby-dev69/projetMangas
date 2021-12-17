@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/static/style.css" />
+    <title>Les Mangas</title>
+</head>
+
+<body>
+    <h1 class="title"></h1>Connecté: {{user.NAME}}</h1>
+    <form action="/logout">
+        <button name="LogoutBTN" type="submit">Déconnexion</button>
+    </form>
+    
+    <img style="max-width: 300px; height: auto;" src="{{imgDir}}">
+    <h3 class="title">{{book.NOMLIVRE}}</h3>
+
+    <form action="/">
+        <button name="backBTN" type="submit">Retour</button>
+    </form>
+</body>
+
+</html>

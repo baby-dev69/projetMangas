@@ -1,4 +1,17 @@
 -- ---------  Base ORACLE MANGAS ----------------------------
+-- --------- Table : User  ----------------------------------------
+
+create table USER
+(
+   IDUSER            	number(3) not null,
+   EMAIL                varchar2(100),
+   PASSWORD             varchar2(100),
+   NAME                 varchar2(20),
+   constraint PK_USER primary key (IDUSER),
+   constraint AK_EMAIL UNIQUE(EMAIL) 
+
+);
+
 -- --------- Table : Livre  ----------------------------------------
 
 create table LIVRE
@@ -14,6 +27,7 @@ create table LIVRE
 
 
 );
+
 
 -- -------- Table : AUTEUR ------------------------------------------
 
@@ -34,14 +48,20 @@ create table GENRE
    constraint PK_GENRE primary key (IDGENRE)
 );
 
--- ------------- BASE CAPITAINERIE -----------------------------------------
+-- ------------- BASE MANGAS -----------------------------------------
+-- --------- INSERT USER ------------
+
+INSERT INTO USER VALUES(1,"test@gmail.com","123bonjour","Jean");
+INSERT INTO USER VALUES(2,"toto@gmail.com","123bonsoir","Pierre");
+INSERT INTO USER VALUES(3,"tata@gmail.com","123salut","Huguette");
+
 -- --------- INSERT LIVRE ------------
 
-INSERT INTO LIVRE VALUES(1,1,1,'Naruto','xxxx.png');
-INSERT INTO LIVRE VALUES(2,1,2,'One Piece','xxxx.png');
-INSERT INTO LIVRE VALUES(3,2,3,'Bleach','xxxx.png');
-INSERT INTO LIVRE VALUES(4,2,4,'Dragon Ball Z','xxxx.png');
-INSERT INTO LIVRE VALUES(5,2,5,'One Punch Man','xxxx.png');
+INSERT INTO LIVRE VALUES(1,1,1,'Naruto','naruto.jpg');
+INSERT INTO LIVRE VALUES(2,1,2,'One Piece','onePiece.jpg');
+INSERT INTO LIVRE VALUES(3,2,3,'Bleach','bleach.jpg');
+INSERT INTO LIVRE VALUES(4,2,4,'Dragon Ball Z','dragonBallZ.jpg');
+INSERT INTO LIVRE VALUES(5,2,5,'One Punch Man','onePunchMan.jpg');
  
 -- --------- INSERT AUTEUR ------------
 
